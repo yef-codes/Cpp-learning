@@ -19,12 +19,12 @@ float getResistance(std::string name)
     {
         std::cout << "Enter " << name << " value:" << std::endl;
 
-        float R1;
-        std::cin >> R1;
+        float res;
+        std::cin >> res;
 
-        if (R1 > 0)
+        if (res > 0)
         {
-            return R1;
+            return res;
         }
         else
         {
@@ -35,13 +35,13 @@ float getResistance(std::string name)
 
 int main()
 {
-    float R1 = getResistance("R1");
-    float R2 = getResistance("R2");
-    float R3 = getResistance("R3");
+    float res1 = getResistance("R1");
+    float res2 = getResistance("R2");
+    float res3 = getResistance("R3");
 
-    float R0 = R1 * R2 * R3 / (R2 * R3 + R1 * R3 + R1 * R2);
+    float res0 = res1 * res2 * res3 / (res2 * res3 + res1 * res3 + res1 * res2);
 
-    std::cout << "R0 = " << R0 << std::endl;
+    std::cout << "R0 = " << res0 << std::endl;
 
     return 0;
 }
