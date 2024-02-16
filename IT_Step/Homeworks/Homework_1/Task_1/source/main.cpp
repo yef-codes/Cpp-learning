@@ -18,7 +18,6 @@ float getResistance(std::string name)
     while (true)
     {
         std::cout << "Enter " << name << " value:" << std::endl;
-
         float res;
         std::cin >> res;
 
