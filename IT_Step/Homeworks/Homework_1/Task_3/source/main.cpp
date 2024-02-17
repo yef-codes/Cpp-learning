@@ -27,7 +27,7 @@ double getVelocity()
         }
         else
         {
-            std::cout << "Velocity must be a positive number. Enter correct value" << std::endl;
+            std::cout << "Velocity must be a non-negative number. Please enter the correct value!" << std::endl;
         }
     }
 }
@@ -46,7 +46,7 @@ double getTime()
         }
         else
         {
-            std::cout << "Time must be a positive number. Enter correct value" << std::endl;
+            std::cout << "Time must be a non-negative number. Please enter the correct value!" << std::endl;
         }
     }
 }
@@ -64,7 +64,7 @@ double getAcceleration()
         }
         else
         {
-            std::cout << "Acceleration must be positive number. Enter correct value" << std::endl;
+            std::cout << "Acceleration must be a non-negative number. Please enter the correct value!" << std::endl;
         }
     }
 }

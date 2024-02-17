@@ -27,7 +27,7 @@ float getResistance(std::string name)
         }
         else
         {
-            std::cout << "Resistance must be over 0. Enter correct value!" << std::endl;
+            std::cout << "Resistance must be greater than 0. Please enter the correct value!" << std::endl;
         }
     }
 }
@@ -41,6 +41,8 @@ int main()
     float res0 = res1 * res2 * res3 / (res2 * res3 + res1 * res3 + res1 * res2);
 
     std::cout << "R0 = " << res0 << std::endl;
+
+    std::cout << "\n=====> DONE <=====\n"<< std::endl;
 
     return 0;
 }
