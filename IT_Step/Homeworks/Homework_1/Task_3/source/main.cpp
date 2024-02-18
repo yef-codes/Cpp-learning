@@ -79,5 +79,7 @@ int main()
 
     std::cout << "Distance passed = " << S << "m" << std::endl;
 
+    std::cout << "\n=====> DONE <=====\n"<< std::endl;
+
     return 0;
 }
