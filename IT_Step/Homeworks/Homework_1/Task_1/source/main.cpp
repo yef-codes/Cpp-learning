@@ -1,5 +1,5 @@
 /*
- ============================================================================
+ ==============================================================================
  Name        : Homework_1-Task_1
  Author      : Viacheslav Yefisko
  Version     : 0
@@ -7,7 +7,7 @@
  Description : Given three resistances R1, R2, R3. Calculate the value of R0
                using the formula: 1/R0 = 1/R1 + 1/R2 + 1/R3.
                Test case: R1=2, R2=4, R3=8, R0=1.142857.
- ============================================================================
+ ==============================================================================
  */
 
 #include <iostream>
@@ -17,7 +17,9 @@ float getResistance(std::string name)
 {
     while (true)
     {
-        std::cout << "Enter " << name << " value:" << std::endl;
+        std::cout << "Enter " << name << " value:"
+                  << std::endl;
+                  
         float res;
         std::cin >> res;
 
@@ -27,7 +29,9 @@ float getResistance(std::string name)
         }
         else
         {
-            std::cout << "Resistance must be greater than 0. Please enter the correct value!" << std::endl;
+            std::cout << "Resistance must be greater than 0. "
+                      << "Please enter the correct value!"
+                      << std::endl;
         }
     }
 }
@@ -38,11 +42,14 @@ int main()
     float res2 = getResistance("R2");
     float res3 = getResistance("R3");
 
-    float res0 = res1 * res2 * res3 / (res2 * res3 + res1 * res3 + res1 * res2);
+    float res0 =
+        res1 * res2 * res3 / (res2 * res3 + res1 * res3 + res1 * res2);
 
-    std::cout << "R0 = " << res0 << std::endl;
+    std::cout << "R0 = " << res0
+              << std::endl;
 
-    std::cout << "\n=====> DONE <=====\n"<< std::endl;
+    std::cout << "\n=====> DONE <=====\n"
+              << std::endl;
 
     return 0;
 }

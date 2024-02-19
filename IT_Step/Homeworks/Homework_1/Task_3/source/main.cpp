@@ -1,5 +1,5 @@
 /*
- ============================================================================
+ ==============================================================================
  Name        : Homework_1-Task_3
  Author      : Viacheslav Yefisko
  Version     : 0
@@ -7,7 +7,7 @@
  Description : Calculate the traveled distance according to the formula
                S = v*t + (a*t^2) / 2, where v - speed, t - time,
                and a - acceleration.
- ============================================================================
+ ==============================================================================
  */
 
 #include <iostream>
@@ -17,7 +17,7 @@ double getVelocity()
 {
     while (true)
     {
-        std::cout << "Enter Velocity v, m/s" << std::endl;
+        std::cout << "Enter Velocity v, m/s: ";
         double vel;
         std::cin >> vel;
 
@@ -27,7 +27,9 @@ double getVelocity()
         }
         else
         {
-            std::cout << "Velocity must be a non-negative number. Please enter the correct value!" << std::endl;
+            std::cout << "Velocity must be a non-negative number. "
+                      << "Please enter the correct value!"
+                      << std::endl;
         }
     }
 }
@@ -36,7 +38,7 @@ double getTime()
 {
     while (true)
     {
-        std::cout << "Enter Time t, s" << std::endl;
+        std::cout << "Enter Time t, s: ";
         double time;
         std::cin >> time;
 
@@ -46,15 +48,18 @@ double getTime()
         }
         else
         {
-            std::cout << "Time must be a non-negative number. Please enter the correct value!" << std::endl;
+            std::cout << "Time must be a non-negative number. "
+                      << "Please enter the correct value!"
+                      << std::endl;
         }
     }
 }
+
 double getAcceleration()
 {
     while (true)
     {
-        std::cout << "Enter Acceleration a, m/s2" << std::endl;
+        std::cout << "Enter Acceleration a, m/s2: ";
         double accel;
         std::cin >> accel;
 
@@ -64,7 +69,9 @@ double getAcceleration()
         }
         else
         {
-            std::cout << "Acceleration must be a non-negative number. Please enter the correct value!" << std::endl;
+            std::cout << "Acceleration must be a non-negative number. "
+                      << "Please enter the correct value!"
+                      << std::endl;
         }
     }
 }
@@ -77,9 +84,11 @@ int main()
 
     double S = velocity * time + acceleration * pow(time, 2) / 2;
 
-    std::cout << "Distance passed = " << S << "m" << std::endl;
+    std::cout << "Distance passed: " << S << "m"
+              << std::endl;
 
-    std::cout << "\n=====> DONE <=====\n"<< std::endl;
+    std::cout << "\n=====> DONE <=====\n"
+              << std::endl;
 
     return 0;
 }
