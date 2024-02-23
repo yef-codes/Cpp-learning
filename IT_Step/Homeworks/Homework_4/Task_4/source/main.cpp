@@ -56,7 +56,9 @@ int main()
     long long prod = computeProductOfRange(min, max);
 
     std::cout << "Product of integers from "
-              << min << " to "
-              << max << ": " << prod
+              << min << " to " << max << ": " << prod
+              << std::endl;
+
+    std::cout << "\n=====> DONE <=====\n"
               << std::endl;
 }

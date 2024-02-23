@@ -4,7 +4,7 @@
  Author      : Viacheslav Yefisko
  Version     : 0
  Copyright   : MIT License
- Description : Write a program that calculates a sum of integers from n до 500
+ Description : Write a program that calculates a sum of integers from n to 500
                (value n is entered by the user).
  ==============================================================================
  */
@@ -56,7 +56,9 @@ int main()
     int sum = computeSumOfRange(min, max);
 
     std::cout << "Sum of integers from "
-              << min << " to "
-              << max << ": " << sum
+              << min << " to " << max << ": " << sum
+              << std::endl;
+
+    std::cout << "\n=====> DONE <=====\n"
               << std::endl;
 }
