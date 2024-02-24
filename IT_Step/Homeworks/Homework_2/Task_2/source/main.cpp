@@ -4,7 +4,7 @@
  Author      : Viacheslav Yefisko
  Version     : 0
  Copyright   : MIT License
- Description : Write a programm that converts float number entered with keyboard
+ Description : Write a program that converts float number entered with keyboard
                into currency format. For example, number 12.5 must be converted
                into "12 dollars 50 cents".
  ==============================================================================
