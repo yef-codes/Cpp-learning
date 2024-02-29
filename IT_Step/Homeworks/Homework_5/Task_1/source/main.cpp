@@ -62,10 +62,10 @@ int countZeros(int num)
 int getIntFromUser()
 {
     std::cout << "Enter integer number: ";
-    int userNumb;
-    std::cin >> userNumb;
+    int userNum;
+    std::cin >> userNum;
 
-    return userNumb;
+    return userNum;
 }
 
 int main()
