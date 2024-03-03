@@ -43,7 +43,8 @@
 
 enum OPERATOR
 {
-    OPERATOR_1 = 1,
+    UNKNOWN,
+    OPERATOR_1,
     OPERATOR_2,
     OPERATOR_3
 };
@@ -56,13 +57,12 @@ void printOperators()
               << std::endl;
 }
 
-int getUserChoice()
+char getUserChar()
 {
-    std::cout << "Your choice: ";
-    int choice;
-    std::cin >> choice;
+    char userChar;
+    std::cin >> userChar;
 
-    return choice;
+    return userChar;
 }
 
 float getUserCost()
@@ -84,6 +84,29 @@ float getUserCost()
                       << std::endl;
         }
     }
+}
+
+OPERATOR getOperatorType(char ch)
+{
+    OPERATOR operatorType;
+
+    switch (ch)
+    {
+    case '1':
+        operatorType = OPERATOR::OPERATOR_1;
+        break;
+    case '2':
+        operatorType = OPERATOR::OPERATOR_2;
+        break;
+    case '3':
+        operatorType = OPERATOR::OPERATOR_3;
+        break;
+    default:
+        operatorType = OPERATOR::UNKNOWN;
+        break;
+    }
+
+    return operatorType;
 }
 
 float computeTariffRate(int operator_1, int operator_2)
@@ -164,17 +187,33 @@ int main()
 {
     float callCost = getUserCost();
 
-    std::cout << "Choose an outgoing call operator:" << std::endl;
+    std::cout << "\nChoose an outgoing call operator:" << std::endl;
     printOperators();
-    int outOp = getUserChoice();
+    std::cout << "Your choice: ";
+    char userInput = getUserChar();
+    OPERATOR outOperator = getOperatorType(userInput);
+    if (outOperator == OPERATOR::UNKNOWN)
+    {
+        std::cout << "Unknown operator type! Terminating..." << std::endl;
+        return -1;
+    }
 
-    std::cout << "Choose an incoming call operator:" << std::endl;
+    std::cout << "\nChoose an incoming call operator:" << std::endl;
     printOperators();
-    int inOp = getUserChoice();
+    std::cout << "Your choice: ";
+    userInput = getUserChar();
+    OPERATOR inOperator = getOperatorType(userInput);
+    if (inOperator == OPERATOR::UNKNOWN)
+    {
+        std::cout << "Unknown operator type! Terminating..." << std::endl;
+        return -1;
+    }
 
-    float rate = computeTariffRate(outOp, inOp);
+    float rate = computeTariffRate(outOperator, inOperator);
 
-    std::cout << "Total cost of the call: " << computeTotalCost(callCost, rate) << std::endl;
+    std::cout << "\nTotal cost of the call: "
+              << computeTotalCost(callCost, rate)
+              << std::endl;
 
     std::cout << "\n=====> DONE <=====\n"
               << std::endl;
