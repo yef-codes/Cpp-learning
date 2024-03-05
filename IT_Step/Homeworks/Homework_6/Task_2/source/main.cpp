@@ -4,17 +4,20 @@
  Author      : Viacheslav Yefisko
  Version     : 0
  Copyright   : MIT License
- Description : Написать игру «Кубики». Пользователь и компьютер по очереди бросают 2 кубика. Победитель — тот, у кого по результатам 3х бросков сумма больше.
-// Предусмотреть красивый интерфейс игры.
+ Description : Write a «Roll the dice» game. The user and the computer roll
+               two dices each for three rounds. The winner is defined by the
+               points total. Create a game visualisation.
  ==============================================================================
  */
 
 #include <iostream>
-#include <Windows.h>
+#include <unistd.h>
+#include <windows.h>
 #include <conio.h>
+#include <random>
 
-#define DICE_MIN 1
-#define DICE_MAX 6
+#define DICE_VAL_MIN 1
+#define DICE_VAL_MAX 6
 #define ROUNDS 3
 #define DICES 2
 
@@ -78,10 +81,13 @@ void drawDice(int diceNum)
     }
 }
 
-int rollDice()
+int rollDice(int minVal, int maxVal)
 {
-    srand(time(NULL));
-    return rand() % DICE_MAX + DICE_MIN;
+    std::random_device dev;
+    std::mt19937 rgen(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> dist(minVal, maxVal);
+
+    return dist(rgen);
 }
 
 int makePlayerTurn()
@@ -91,7 +97,7 @@ int makePlayerTurn()
     // Player rolls DICES dices each turn.
     for (int dice = 0; dice < DICES; dice++)
     {
-        int rollResult = rollDice();
+        int rollResult = rollDice(DICE_VAL_MIN, DICE_VAL_MAX);
         drawDice(rollResult);
         turnResult += rollResult;
 
