@@ -27,11 +27,11 @@ int getRandVal(int minVal, int maxVal)
     return dist(rgen);
 }
 
-void fillArrWithRandVal(int array[], int size)
+void fillArrWithRandVal(int array[], int size, int minVal, int maxVal)
 {
     for (int i = 0; i < size; i++)
     {
-        array[i] = getRandVal(ARR_VAL_MIN, ARR_VAL_MAX);
+        array[i] = getRandVal(minVal, maxVal);
     }
 }
 
@@ -78,7 +78,7 @@ int arrMinVal(int array[], int size)
 int main()
 {
     int array[ARR_SIZE];
-    fillArrWithRandVal(array, ARR_SIZE);
+    fillArrWithRandVal(array, ARR_SIZE, ARR_VAL_MIN, ARR_VAL_MAX);
 
     std::cout << "Given array: ";
     printArr(array, ARR_SIZE);
