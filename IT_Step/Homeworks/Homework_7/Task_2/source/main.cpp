@@ -51,7 +51,7 @@ int arrMaxVal(int array[], int size, int firstIndex, int lastIndex)
 {
     int maxVal = array[firstIndex];
 
-    for (int i = firstIndex; i < lastIndex; i++)
+    for (int i = firstIndex; i <= lastIndex; i++)
     {
         if (array[i] > maxVal)
         {
@@ -67,7 +67,7 @@ int arrMaxValIndex(int array[], int size, int firstIndex, int lastIndex)
     int index = firstIndex;
     int maxVal = array[firstIndex];
 
-    for (int i = firstIndex; i < lastIndex; i++)
+    for (int i = firstIndex; i <= lastIndex; i++)
     {
         if (array[i] > maxVal)
         {
@@ -83,7 +83,7 @@ int arrMinVal(int array[], int size, int firstIndex, int lastIndex)
 {
     int minVal = array[firstIndex];
 
-    for (int i = firstIndex; i < lastIndex; i++)
+    for (int i = firstIndex; i <= lastIndex; i++)
     {
         if (array[i] < minVal)
         {
@@ -99,7 +99,7 @@ int arrMinValIndex(int array[], int size, int firstIndex, int lastIndex)
     int index = firstIndex;
     int minVal = array[firstIndex];
 
-    for (int i = firstIndex; i < lastIndex; i++)
+    for (int i = firstIndex; i <= lastIndex; i++)
     {
         if (array[i] < minVal)
         {
@@ -134,11 +134,11 @@ int main()
     std::cout << "\nThe last month of the range." << std::endl;
     int lastMonth = getUserMonth();
 
-    int minIncome = arrMinVal(incomePeriod, MONTHS, firstMonth, lastMonth);
-    int maxIncome = arrMaxVal(incomePeriod, MONTHS, firstMonth, lastMonth);
+    int minIncome = arrMinVal(incomePeriod, MONTHS, firstMonth - 1, lastMonth - 1);
+    int maxIncome = arrMaxVal(incomePeriod, MONTHS, firstMonth - 1, lastMonth - 1);
 
-    int minIncomeMonth = arrMinValIndex(incomePeriod, MONTHS, firstMonth, lastMonth) + 1;
-    int maxIncomeMonth = arrMaxValIndex(incomePeriod, MONTHS, firstMonth, lastMonth) + 1;
+    int minIncomeMonth = arrMinValIndex(incomePeriod, MONTHS, firstMonth - 1, lastMonth - 1) + 1;
+    int maxIncomeMonth = arrMaxValIndex(incomePeriod, MONTHS, firstMonth - 1, lastMonth - 1) + 1;
 
     std::cout << "\nIn the range of " << firstMonth << printNumeralSuffix(firstMonth)
               << " and " << lastMonth << printNumeralSuffix(lastMonth) << " months "
