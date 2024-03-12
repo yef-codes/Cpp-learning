@@ -16,7 +16,7 @@
 #include <iostream>
 #include <random>
 
-#define ARR_SIZE 10
+#define ARR_LEN 10
 #define ARR_VAL_MIN -100.0f
 #define ARR_VAL_MAX 100.0f
 
@@ -186,32 +186,32 @@ int arrMaxValIndex(float array[], int size)
 
 int main()
 {
-    float array[ARR_SIZE];
-    fillArrWithRandVal(array, ARR_SIZE, ARR_VAL_MIN, ARR_VAL_MAX);
+    float array[ARR_LEN];
+    fillArrWithRandVal(array, ARR_LEN, ARR_VAL_MIN, ARR_VAL_MAX);
 
     std::cout << "Given array: ";
-    printArr(array, ARR_SIZE);
+    printArr(array, ARR_LEN);
 
     std::cout << "Sum of negative elements: "
-              << sumNegativeValues(array, ARR_SIZE) << std::endl;
+              << sumNegativeValues(array, ARR_LEN) << std::endl;
 
     std::cout << "Product of elements between min and max elements: "
               << prodValuesBetweenIndexes(
                      array,
-                     ARR_SIZE,
-                     arrMinValIndex(array, ARR_SIZE),
-                     arrMaxValIndex(array, ARR_SIZE))
+                     ARR_LEN,
+                     arrMinValIndex(array, ARR_LEN),
+                     arrMaxValIndex(array, ARR_LEN))
               << std::endl;
 
     std::cout << "Product of elements located at even indexes: "
-              << prodValuesAtEvenIndexes(array, ARR_SIZE) << std::endl;
+              << prodValuesAtEvenIndexes(array, ARR_LEN) << std::endl;
 
     std::cout << "Sum of elements located between the first and the last negative elements: "
               << sumValuesBetweenIndexes(
                      array,
-                     ARR_SIZE,
-                     firstNegativeValIndex(array, ARR_SIZE),
-                     lastNegativeValIndex(array, ARR_SIZE))
+                     ARR_LEN,
+                     firstNegativeValIndex(array, ARR_LEN),
+                     lastNegativeValIndex(array, ARR_LEN))
               << std::endl;
 
     std::cout << "\n=====> DONE <=====\n"
