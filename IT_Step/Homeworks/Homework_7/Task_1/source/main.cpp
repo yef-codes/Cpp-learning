@@ -14,7 +14,7 @@
 #include <windows.h>
 #include <random>
 
-#define ARR_SIZE 10
+#define ARR_LEN 10
 #define ARR_VAL_MIN 1
 #define ARR_VAL_MAX 100
 
@@ -77,14 +77,14 @@ int arrMinVal(int array[], int size)
 
 int main()
 {
-    int array[ARR_SIZE];
-    fillArrWithRandVal(array, ARR_SIZE, ARR_VAL_MIN, ARR_VAL_MAX);
+    int array[ARR_LEN];
+    fillArrWithRandVal(array, ARR_LEN, ARR_VAL_MIN, ARR_VAL_MAX);
 
     std::cout << "Given array: ";
-    printArr(array, ARR_SIZE);
+    printArr(array, ARR_LEN);
 
-    std::cout << "Min value: " << arrMinVal(array, ARR_SIZE) << std::endl;
-    std::cout << "Max value: " << arrMaxVal(array, ARR_SIZE) << std::endl;
+    std::cout << "Min value: " << arrMinVal(array, ARR_LEN) << std::endl;
+    std::cout << "Max value: " << arrMaxVal(array, ARR_LEN) << std::endl;
 
     std::cout << "\n=====> DONE <=====\n"
               << std::endl;
