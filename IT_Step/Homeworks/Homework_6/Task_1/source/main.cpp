@@ -14,8 +14,8 @@
 #include <iostream>
 #include <Windows.h>
 
-#define LINE_LENGTH 10
-#define SPEED_MULTIPLIER 5000
+#define LINE_LEN 10
+#define SPEED_FACTOR 5000
 
 enum LINE_TYPE
 {
@@ -111,7 +111,7 @@ void drawLine(int length, char symb, LINE_TYPE type, DRAWING_SPEED speed)
             std::cout << symb;
         }
 
-        Sleep(SPEED_MULTIPLIER / speed);
+        Sleep(SPEED_FACTOR / speed);
     }
 
     std::cout << std::endl;
@@ -145,7 +145,7 @@ int main()
     userInput = getUserChar();
 
     std::cout << "\nDrawing the line...\n";
-    drawLine(LINE_LENGTH, userInput, type, speed);
+    drawLine(LINE_LEN, userInput, type, speed);
 
     std::cout << "\n=====> DONE <=====\n"
               << std::endl;
